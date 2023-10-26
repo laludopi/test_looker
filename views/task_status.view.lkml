@@ -34,4 +34,9 @@ view: task_status {
     type: count_distinct
     sql: ${TABLE}.Customer_id;;
   }
+
+  measure: percent_of_total{
+    type: percent_of_total
+    sql: ${count};;
+  }
 }
