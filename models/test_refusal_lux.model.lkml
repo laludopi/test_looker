@@ -26,4 +26,3 @@ persist_with: test_refusal_lux_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: task_status {}
-
