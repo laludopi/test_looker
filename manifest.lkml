@@ -11,8 +11,8 @@ visualization: {
   file: "visualizations/sankey.js"
 }
 
-#visualization: {
-# id: "text_html"
-#label: "html_content"
-#file: "visualizations/test_html.js"
-#}
+visualization: {
+id: "html"
+label: "Html Content"
+file: "visualizations/html_content.js"
+}
