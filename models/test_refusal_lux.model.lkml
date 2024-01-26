@@ -17,3 +17,5 @@ persist_with: test_refusal_lux_default_datagroup
 explore: task_status {}
 
 explore: demo_html {}
+
+explore: html {}
