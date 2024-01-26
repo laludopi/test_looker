@@ -37,8 +37,15 @@ view: active_users {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
 
-  measure: count {
+  measure: active_users_ {
     type: count_distinct
-    drill_fields: [id]
+    hidden: yes
+    sql:id;;
   }
+
+  measure: active_users {
+    type: string
+    sql:CASE WHEN ${active_users_}=NULL THEN 0 ELSE ${active_users_};;
+  }
+
 }
