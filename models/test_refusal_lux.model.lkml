@@ -19,3 +19,5 @@ explore: task_status {}
 explore: demo_html {}
 
 explore: html {}
+
+explore: active_users {}
