@@ -44,8 +44,9 @@ view: active_users {
   }
 
   measure: active_users {
-    type: string
-    sql:CASE WHEN (COUNT DISTINCT ${id}) IS NULL THEN 0 ELSE (COUNT DISTINCT ${id})END;;
+    type: number
+    sql: CASE WHEN COUNT(DISTINCT ${id}) IS NULL THEN 0 ELSE COUNT(DISTINCT ${id} END;;
   }
+
 
 }
