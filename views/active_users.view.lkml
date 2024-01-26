@@ -45,7 +45,7 @@ view: active_users {
 
   measure: active_users {
     type: number
-    sql: CASE WHEN COUNT(DISTINCT ${id}) IS NULL THEN 0 ELSE COUNT(DISTINCT ${id} END;;
+    sql: CASE WHEN COUNT(DISTINCT ${id}) IS NULL THEN 0 ELSE COUNT(DISTINCT ${id}) END;;
   }
 
 
