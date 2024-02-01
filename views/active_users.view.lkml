@@ -29,8 +29,13 @@ view: active_users {
 
   dimension: tier {
     type: string
-    sql: CONCAT("Tier ",${TABLE}.Tier) ;;
+    sql: CASE WHEN ${TABLE}.Tier="1" THEN "Silver"
+    WHEN ${TABLE}.Tier="2" THEN "Gold"
+    WHEN ${TABLE}.Tier="3" THEN "Platinum"
+    ELSE "Diamond";;
   }
+
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
