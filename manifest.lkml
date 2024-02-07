@@ -5,14 +5,14 @@ localization_settings: {
   localization_level: permissive
 }
 
-visualization: {
-  id: "sankey"
-  label: "Sankey_Diagram"
-  file: "visualizations/sankey.js"
-}
+# visualization: {
+#   id: "sankey"
+#   label: "Sankey_Diagram"
+#   file: "visualizations/sankey.js"
+# }
 
-visualization: {
-id: "html"
-label: "Html Content"
-file: "visualizations/html_content.js"
-}
+# visualization: {
+# id: "html"
+# label: "Html Content"
+# file: "visualizations/html_content.js"
+# }

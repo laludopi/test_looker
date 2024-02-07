@@ -1,22 +1,18 @@
-# The name of this view in Looker is "Active Users"
+# The name of this view in Looker is "active_users"
 view: active_users {
-  # The sql_table_name parameter indicates the underlying database table
-  # to be used for all fields in this view.
-  sql_table_name: `winter-agility-390415.Refusal_Reason_Lux.Active Users` ;;
-  drill_fields: [id]
-
-  # This primary key is the unique key for this table in the underlying database.
-  # You need to define a primary key in a view in order to join to other views.
+  derived_table: {
+  datagroup_trigger: test_refusal_lux_default_datagroup
+  sql:
+  SELECT
+  id, New_Existing,Prospect_Customer,Tier
+  FROM  `winter-agility-390415.Refusal_Reason_Lux.Active Users`;;
+  }
 
   dimension: id {
     primary_key: yes
     type: number
     sql: ${TABLE}.ID ;;
   }
-    # Here's what a typical dimension looks like in LookML.
-    # A dimension is a groupable field that can be used to filter query results.
-    # This dimension will be called "New Existing" in Explore.
-
   dimension: new_existing {
     type: string
     sql: ${TABLE}.New_Existing ;;
@@ -27,20 +23,20 @@ view: active_users {
     sql: ${TABLE}.Prospect_Customer ;;
   }
 
-  dimension: tier {
-    type: string
-    sql: CASE WHEN ${TABLE}.Tier="1" THEN "Silver"
-    WHEN ${TABLE}.Tier="2" THEN "Gold"
-    WHEN ${TABLE}.Tier="3" THEN "Platinum"
-    ELSE "Diamond";;
+  dimension: tier_id {
+    type: number
+    sql: ${TABLE}.Tier ;;
   }
 
 
-
-  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
-  # measures for this dimension, but you can also add measures of many different aggregates.
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
-
+  dimension: tier {
+    type: string
+    order_by_field: tier_id
+    sql: CASE WHEN ${TABLE}.Tier=1 THEN "Silver"
+    WHEN ${TABLE}.Tier=2 THEN "Gold"
+    WHEN ${TABLE}.Tier=3 THEN "Platinum"
+    ELSE "Diamond"END;;
+  }
 
   measure: active_users_ {
     type: count_distinct
