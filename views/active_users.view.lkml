@@ -4,7 +4,7 @@ view: active_users {
   datagroup_trigger: test_refusal_lux_default_datagroup
   sql:
   SELECT
-  id, New_Existing,Prospect_Customer,Tier
+  id, Prospect_Customer,Tier
   FROM  `winter-agility-390415.Refusal_Reason_Lux.Active Users`;;
   }
 
@@ -14,10 +14,10 @@ view: active_users {
     type: number
     sql: ${TABLE}.ID ;;
   }
-  dimension: new_existing {
-    type: string
-    sql: ${TABLE}.New_Existing ;;
-  }
+  # dimension: new_existing {
+  #   type: string
+  #   sql: ${TABLE}.New_Existing ;;
+  # }
 
   dimension: prospect_customer {
     type: string
