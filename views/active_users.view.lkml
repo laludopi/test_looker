@@ -8,6 +8,7 @@ view: active_users {
   FROM  `winter-agility-390415.Refusal_Reason_Lux.Active Users`;;
   }
 
+
   dimension: id {
     primary_key: yes
     type: number
