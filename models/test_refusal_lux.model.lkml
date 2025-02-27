@@ -1,5 +1,5 @@
 # Define the database connection to be used for this model.
-connection: "test_refusal_lux"
+connection: "looker_partner_demo"
 
 # include all the views
 include: "/views/**/*.view.lkml"

@@ -1,11 +1,12 @@
 # The name of this view in Looker is "active_users"
 view: active_users {
   derived_table: {
-  datagroup_trigger: test_refusal_lux_default_datagroup
+  # datagroup_trigger: test_refusal_lux_default_datagroup
   sql:
   SELECT
   id, Prospect_Customer,Tier
   FROM  `winter-agility-390415.Refusal_Reason_Lux.Active Users`;;
+
   }
 
 
